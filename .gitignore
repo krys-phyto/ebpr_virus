@@ -16,3 +16,12 @@ analysis/seqkit/output/*
 # Big Data
 analysis/blast/2025-09-24/input/*
 analysis/blast/2025-09-29/input/*
+
+
+# Meeting folder
+meetings/*
+
+
+# Rstudio folder
+rstudio/.Rproj.user/*
+rstudio/rstudio.Rproj
