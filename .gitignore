@@ -1,1 +1,17 @@
+
+# Mac things
 .DS_Store
+*/.DS_Store
+*/*/.DS_Store
+
+# Output files
+analysis/VIBRANT/output/*
+analysis/samtools/output/*
+analysis/spacers_cov/2025-09-24/output/*
+analysis/blast/2025-09-24/output/*
+analysis/blast/2025-09-29/output/*
+
+
+# Big Data
+analysis/blast/2025-09-24/input/*
+analysis/blast/2025-09-29/input/*
