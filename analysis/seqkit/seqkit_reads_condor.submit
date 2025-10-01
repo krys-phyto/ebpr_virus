@@ -1,0 +1,19 @@
+########################################################################
+### Krys Kibler 2025-09-24
+### Condor submit file for running seqkit
+### Purpose: obtaining quick stats on ebpr reads
+########################################################################
+
+executable = /home/glbrc.org/kjkibler/ebpr_virus/analysis/seqkit/reads_ebpr/seqkit_reads_condor.sh
+
+request_cpus = 16
+request_memory = 150GB
+arguments = $(reads)
+
+
+output = /home/glbrc.org/kjkibler/ebpr_virus/analysis/condor/outs/$(Cluster)_seqkit.out
+error = /home/glbrc.org/kjkibler/ebpr_virus/analysis/condor/errs/$(Cluster)_seqkit.err
+log = /home/glbrc.org/kjkibler/ebpr_virus/analysis/condor/logs/$(Cluster)_seqkit.log
+
+
+queue reads from /home/glbrc.org/trina.mcmahon/ebpr/analysis/array_hunting/spacer_blast_reads/all_reads_paths.txt
