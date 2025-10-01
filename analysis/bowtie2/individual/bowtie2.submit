@@ -1,0 +1,20 @@
+########################################################################
+### Krys Kibler 2025-09-27
+### Condor submit file for running bowtie2
+### Purpose: mapping
+########################################################################
+
+executable = /home/glbrc.org/kjkibler/ebpr_virus/analysis/bowtie2/individual/bowtie2_condor.sh
+
+
+request_cpus = 16
+request_memory = 200GB
+arguments = $(reads_sampleID) $(reads) $(assembly_index)
+
+
+output = /home/glbrc.org/kjkibler/ebpr_virus/analysis/condor/outs/$(Cluster)_ind_bowtie2.out
+error = /home/glbrc.org/kjkibler/ebpr_virus/analysis/condor/errs/$(Cluster)_ind_bowtie2.err
+log = /home/glbrc.org/kjkibler/ebpr_virus/analysis/condor/logs/$(Cluster)_ind_bowtie2.log
+
+
+queue reads_sampleID,reads,assembly_index from /home/glbrc.org/kjkibler/ebpr_virus/analysis/bowtie2/individual/individual.assembly.mapping.queue.txt

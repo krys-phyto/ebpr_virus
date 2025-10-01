@@ -1,0 +1,19 @@
+########################################################################
+### Krys Kibler 2025-09-19
+### Condor submit file for running VIBRANT
+### Purpose: identifying viral genomes
+########################################################################
+
+executable = /home/glbrc.org/kjkibler/ebpr_virus/analysis/VIBRANT/VIBRANT_condor.sh
+
+request_cpus = 16
+request_memory = 150GB
+arguments = $(assembly) $(sampleID)
+
+
+output = /home/glbrc.org/kjkibler/ebpr_virus/analysis/condor/outs/$(Cluster)_VIBRANT.out
+error = /home/glbrc.org/kjkibler/ebpr_virus/analysis/condor/errs/$(Cluster)_VIBRANT.err
+log = /home/glbrc.org/kjkibler/ebpr_virus/analysis/condor/logs/$(Cluster)_VIBRANT.log
+
+
+queue assembly,sampleID from /home/glbrc.org/kjkibler/ebpr_virus/metadata/assemblies.files.txt
